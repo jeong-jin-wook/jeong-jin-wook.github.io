@@ -2,24 +2,38 @@
 layout: default
 ---
 
-{% include site-header.html %}
+<div class="post">
+  <div class="post-info">
+    <span>Written by</span>
+    {% if page.author %}
+        {{ page.author }}
+    {% else %}
+        {{ site.author.name }}
+    {% endif %}
 
-<main class="main  container">
+    {% if page.date %}
+      <br>
+      <span>on&nbsp;</span><time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
+    {% endif %}
+  </div>
 
-  <article class="article  article--post  content  typeset">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post-line"></div>
 
-    <h1>{{ page.title }}</h1>
-    {% include post-meta.html %}
-    {{ content }}
+  {{ content }}
+</div>
 
-    {% include nav-share.html %}
+{% if page.comments %}
+  {% include disqus_comments.html %}
+{% endif %}
 
-    {% include post-comments.html %}
+<div class="pagination">
+  {% if page.next.url %}
+    <a href="{{ page.next.url | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
+  {% endif %}
+  {% if page.previous.url %}
+    <a href="{{ page.previous.url | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
+  {% endif %}
 
-  </article>
-
-  {% if page.aside == true %}{% include site-aside.html %}{% endif %}
-
-</main>
-
-{% include site-footer.html %}
+  <a href="#" class="top">Top</a>
+</div>
