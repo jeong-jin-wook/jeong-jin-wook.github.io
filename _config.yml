@@ -1,17 +1,17 @@
 # Site settings
 title: jjw-dev
-description: "jjw's dev blog"
+description: "jjw-dev"
 baseurl: "/"
-url: "https://github.com/jeong-jin-wook"
+url: "https://jeong-jin-wook.github.io/"
 
 # Google Analytics
 google_analytics: UA—XXXXXXXX-X
 
 # Author
 author:
-  name: jeong-jinwook
-  url: https://github.com/jeong-jin-wook
-  email: chipmunk03330@gmail.com
+  name: jjw-dev
+  url: https://chester.how
+  email: chesterhow@gmail.com
 
 # Build settings
 markdown: kramdown
