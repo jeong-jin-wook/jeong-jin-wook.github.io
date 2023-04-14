@@ -1,4 +1,8 @@
-_config.yml
-_site/*
-*Thumbs.db
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+alembic-jekyll-theme-*.gem
 Gemfile.lock
+**/Gemfile.lock
+
